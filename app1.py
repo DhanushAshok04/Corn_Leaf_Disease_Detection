@@ -4,24 +4,8 @@ from tensorflow.keras.models import load_model
 
 from PIL import Image
 import numpy as np
+st.title(" Corn disease Image Classification")
 
-# Load your background image
-background_image = Image.open("your_background_image.jpg")
-
-# Set the page title and background image using custom CSS
-st.markdown(
-    f"""
-    <style>
-    .reportview-container {{
-        background: url(data:image/jpeg;base64,{ #F4B400;}) no-repeat center center fixed;
-        background-size: cover;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.title("Image Classification")
 st.write("Predict the Corn disease Image.")
 
 model = load_model("Model.h5")
@@ -49,7 +33,7 @@ if st.button("Predict"):
             unsafe_allow_html=True,
         )
     else:
-        st.write("Please upload file or choose a sample image.")
+        st.write("Please upload file or choose sample image.")
 
 
 st.write("If you would not like to upload an image, you can use the sample image instead:")
@@ -64,4 +48,5 @@ if sample_img_choice:
     predictions = model.predict(img_array)
     label=labels[np.argmax(predictions)]
     image1 = Image.open("Corn_Health (7).jpg")
-    st.image(image1, caption="Uploaded Image", use_column_width=True)
+    st.image(image1, caption="Uploaded Image", use_column_width=True)    
+    st.mark
