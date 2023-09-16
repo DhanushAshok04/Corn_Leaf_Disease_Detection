@@ -5,13 +5,26 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 
-# Set a fixed background color using custom CSS
+# Set the background image URL
+background_image_url = 'URL_TO_YOUR_BACKGROUND_IMAGE'  # Replace with the URL or file path of your background image
 
+# Define a CSS style to set the background image
+background_style = f"""
+    background-image: url('{https://media.istockphoto.com/id/821760914/vector/pastel-multi-color-gradient-vector-background-simple-form-and-blend-with-copy-space.jpg?s=612x612&w=0&k=20&c=adwrMs3MkPLXMb69AYSoMpnCfLSAb_D3PCQRGGXiM5g=}');
+    background-size: cover;
+"""
+
+# Apply the background style using custom CSS
+st.markdown(
+    f"""
     <style>
-    body {
-        background-color: #4285F4;; /* Replace with your desired background color */
-    }
+    .reportview-container {{
+        {background_style}
+    }}
     </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.title("Image Classification")
 st.write("Predict the Corn disease Image.")
