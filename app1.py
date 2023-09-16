@@ -5,21 +5,16 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 
-# Set the background image URL
-background_image_url = 'URL_TO_YOUR_BACKGROUND_IMAGE'  # Replace with the URL or file path of your background image
+# Load your background image
+background_image = Image.open("your_background_image.jpg")
 
-# Define a CSS style to set the background image
-background_style = f"""
-    background-image: url('{background_image_url}');
-    background-size: cover;
-"""
-
-# Apply the background style using custom CSS
+# Set the page title and background image using custom CSS
 st.markdown(
     f"""
     <style>
     .reportview-container {{
-        {background_style}
+        background: url(data:image/jpeg;base64,{background_image}) no-repeat center center fixed;
+        background-size: cover;
     }}
     </style>
     """,
@@ -30,18 +25,19 @@ st.title("Image Classification")
 st.write("Predict the Corn disease Image.")
 
 model = load_model("Model.h5")
-labels = ['Blight', 'Common_Rust', 'Gray_Leaf_Spot', 'Healthy']
+labels=['Blight', 'Common_Rust', 'Gray_Leaf_Spot', 'Healthy']
 uploaded_file = st.file_uploader(
     "Upload an image taken by Corn Disease:", type="jpg"
 )
-predictions = -1
+predictions=-1
 if uploaded_file is not None:
     image1 = Image.open(uploaded_file)
-    image1 = image.smart_resize(image1, (224, 224))
-    image1 = classi = np.array(image1) / 255.
-    result = model.predict(image1[np.newaxis, ...])
-
-    label = labels[np.argmax(result)]
+    image1=image.smart_resize(image1,(224,224))
+    image1=classi=np.array(image1)/255.
+    result=model.predict(image1[np.newaxis,...])
+   
+    label=labels[np.argmax(result)]
+ 
 
 st.write("### Prediction Result")
 if st.button("Predict"):
@@ -53,18 +49,19 @@ if st.button("Predict"):
             unsafe_allow_html=True,
         )
     else:
-        st.write("Please upload a file or choose a sample image.")
+        st.write("Please upload file or choose a sample image.")
+
 
 st.write("If you would not like to upload an image, you can use the sample image instead:")
 sample_img_choice = st.button("Use Sample Image")
 
 if sample_img_choice:
     image1 = Image.open("Corn_Health (7).jpg")
-    image1 = image.smart_resize(image1, (224, 224))
+    image1=image.smart_resize(image1,(224,224))
     img_array = image.img_to_array(image1)
     img_array = np.expand_dims(img_array, axis=0)
-    img_array = img_array / 255.0
+    img_array = img_array/255.0
     predictions = model.predict(img_array)
-    label = labels[np.argmax(predictions)]
+    label=labels[np.argmax(predictions)]
     image1 = Image.open("Corn_Health (7).jpg")
     st.image(image1, caption="Uploaded Image", use_column_width=True)
