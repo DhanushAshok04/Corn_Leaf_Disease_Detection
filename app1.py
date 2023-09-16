@@ -16,7 +16,7 @@ uploaded_file = st.file_uploader(
 predictions=-1
 if uploaded_file is not None:
     image1 = Image.open(uploaded_file)
-    image1=image.smart_resize(image1,(224,224))
+    image1=image.smart_resize(image1,(224, 224))
     image1=classi=np.array(image1)/255.
     result=model.predict(image1[np.newaxis,...])
    
@@ -41,7 +41,7 @@ sample_img_choice = st.button("Use Sample Image")
 
 if sample_img_choice:
     image1 = Image.open("Corn_Health (7).jpg")
-    image1=image.smart_resize(image1,(224,224))
+    image1=image.smart_resize(image1,(224, 224))
     img_array = image.img_to_array(image1)
     img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array/255.0
