@@ -6,16 +6,12 @@ from PIL import Image
 import numpy as np
 
 # Set a fixed background color using custom CSS
-st.markdown(
-    """
+
     <style>
     body {
         background-color: #4285F4;; /* Replace with your desired background color */
     }
     </style>
-    """,
-    unsafe_allow_html=True,
-)
 
 st.title("Image Classification")
 st.write("Predict the Corn disease Image.")
