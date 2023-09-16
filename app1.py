@@ -1,4 +1,4 @@
-pip install --upgrade streamlit
+!pip install --upgrade streamlit
 streamlit version
 import streamlit as st
 from tensorflow.keras.preprocessing import image
