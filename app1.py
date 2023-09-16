@@ -50,4 +50,4 @@ if sample_img_choice:
     image1 = Image.open("Corn_Health (7).jpg")
     st.image(image1, caption="Uploaded Image", use_column_width=True)    
     st.markdown{.background {
-    background-image: url('Corn_Health (7).jpg');
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAv1Jw28nsTuudorp7mim8yST-jw6OQz5msxn-PbtzFEbOJ4RemOisQOlT-c9dvOKKwh0&usqp=CAU');
