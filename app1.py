@@ -49,4 +49,4 @@ if sample_img_choice:
     label=labels[np.argmax(predictions)]
     image1 = Image.open("Corn_Health (7).jpg")
     st.image(image1, caption="Uploaded Image", use_column_width=True)    
-    st.markdown(multi)
+    st.markdown(typr of d disease)
