@@ -10,7 +10,7 @@ background_image_url = 'URL_TO_YOUR_BACKGROUND_IMAGE'  # Replace with the URL or
 
 # Define a CSS style to set the background image
 background_style = f"""
-    background-image: url('{https://media.istockphoto.com/id/821760914/vector/pastel-multi-color-gradient-vector-background-simple-form-and-blend-with-copy-space.jpg?s=612x612&w=0&k=20&c=adwrMs3MkPLXMb69AYSoMpnCfLSAb_D3PCQRGGXiM5g=}');
+    background-image: url('{background_image_url}');
     background-size: cover;
 """
 
