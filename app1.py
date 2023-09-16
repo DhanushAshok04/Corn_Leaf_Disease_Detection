@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 
 from PIL import Image
 import numpy as np
-st.title("Image Classification")
+st.title("Corn disease Image Classification")
 
 st.write("Predict the Corn disease Image.")
 
