@@ -10,7 +10,7 @@ st.markdown(
     """
     <style>
     body {
-        background-color: #f0f0f0; /* Replace with your desired background color */
+        background-color: #4285F4;; /* Replace with your desired background color */
     }
     </style>
     """,
