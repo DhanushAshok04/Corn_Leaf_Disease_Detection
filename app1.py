@@ -13,7 +13,7 @@ st.markdown(
     f"""
     <style>
     .reportview-container {{
-        background: url(data:image/jpeg;base64,{Corn_Blight (1)}) no-repeat center center fixed;
+        background: url(data:image/jpeg;base64,{ #F4B400;}) no-repeat center center fixed;
         background-size: cover;
     }}
     </style>
