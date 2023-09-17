@@ -11,8 +11,8 @@ st.title("Corn Leaf Diseases Detection")
 custom_css = """
 <style>
 body {
-    background-image: url('https://www.garden.eco/wp-content/uploads/2018/04/corn-leaves.jpg.');
-    background-size: cover;
+    background-image: url('https://www.researchgate.net/profile/Md-Haque-165/publication/354688452/figure/fig1/AS:1069723160686592@1632053284465/Example-of-healthya-and-infectedb-corn-leaves-for-classification-and-disease_Q320.jpg');
+    background-size:
 }
 </style>
 """
